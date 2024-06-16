@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "GTA6 Spoiler Blocker",
+    "version": "1.0",
+    "description": "This extension blocks pages containing potential spoilers for Grand Theft Auto 6 by Rockstar Games.",
+    "icons": {
+      "128": "icon/gtaicon.png"
+    },
+    "permissions": [
+      "activeTab",
+      "storage",
+      "tabs"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "128": "icon/gtaicon.png"
+      }
+    }
+  }
